@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: redis
+  name: private-redis
   labels:
-    name: redis-service
+    name: private-redis-service
     app: guestbook-app
     tier: private
 spec:
@@ -11,6 +11,6 @@ spec:
     - port: 6379
       targetPort: 6379
   selector:
-    name: redis-pod
+    name: private-redis-pod
     app: guestbook-app
     tier: private

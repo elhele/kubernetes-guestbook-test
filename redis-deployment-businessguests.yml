@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis-deployment
+  name: business-redis-deployment
   labels:
     app: guestbook-app
     tier: business
@@ -9,19 +9,19 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      name: redis-pod
+      name: business-redis-pod
       app: guestbook-app
       tier: business
   template:
     metadata:
-      name: redis-pod
+      name: business-redis-pod
       labels:
-        name: redis-pod
+        name: business-redis-pod
         app: guestbook-app
         tier: business
     spec:
       containers:
-        - name: redis
+        - name: business-redis
           image: redis
           ports:
             - containerPort: 6379
